@@ -376,8 +376,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48c1bad87787ac24e9a9bba7ec44d9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HandPlayerTransform: {fileID: 1762838183}
-  CardPrefab: {fileID: 2743227925198003229, guid: 6b2bd67efffcf564ea8b0e18ea8a50a8, type: 3}
+  HandPlayerTransform: {fileID: 1627941890}
+  CardPrefab: {fileID: 335924985888106894, guid: 6b2bd67efffcf564ea8b0e18ea8a50a8, type: 3}
 --- !u!4 &341445073
 Transform:
   m_ObjectHideFlags: 0

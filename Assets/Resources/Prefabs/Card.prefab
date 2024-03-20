@@ -85,6 +85,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8768244662363099513}
   - component: {fileID: 6511303180452257756}
+  - component: {fileID: 335924985888106894}
+  - component: {fileID: 962378865277340641}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -105,11 +107,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4143125789995346616}
-  - {fileID: 2768899299147522250}
-  - {fileID: 6745274805964595506}
   - {fileID: 8528858683433297018}
-  - {fileID: 8812470692057875101}
   - {fileID: 4060824770172968602}
+  - {fileID: 6745274805964595506}
+  - {fileID: 8812470692057875101}
+  - {fileID: 2768899299147522250}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -125,6 +127,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2743227925198003229}
   m_CullTransparentMesh: 1
+--- !u!114 &335924985888106894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743227925198003229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c78325197c6d1e741bb41cafe829e7c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &962378865277340641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743227925198003229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949d572937106ae40a78337cfdf7a135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Textname: {fileID: 507024494970407800}
+  Texthp: {fileID: 5775567897115350134}
+  Textat: {fileID: 6299917580257183367}
+  Textcost: {fileID: 8695425457635691648}
+  Imageicon: {fileID: 1968140690193636439}
 --- !u!1 &3046597138934205208
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8528858683433297018
 RectTransform:
   m_ObjectHideFlags: 0
@@ -229,7 +260,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4348209913982071324}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
