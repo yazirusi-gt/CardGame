@@ -377,6 +377,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HandPlayerTransform: {fileID: 1627941890}
+  FieldPlayerTransform: {fileID: 1762838183}
+  HandEnemyTransform: {fileID: 1162663865}
+  FieldEnemyTransform: {fileID: 385010781}
   CardPrefab: {fileID: 335924985888106894, guid: 6b2bd67efffcf564ea8b0e18ea8a50a8, type: 3}
 --- !u!4 &341445073
 Transform:
@@ -1194,7 +1197,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1215919231}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 341445072}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ChangeTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1215919231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1480,6 +1495,7 @@ GameObject:
   - component: {fileID: 1627941892}
   - component: {fileID: 1627941891}
   - component: {fileID: 1627941893}
+  - component: {fileID: 1627941894}
   m_Layer: 5
   m_Name: HandPlayer
   m_TagString: Untagged
@@ -1570,6 +1586,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1627941894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627941889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cfde1bcabcd94549ae8dc58b53e44f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1762838182
 GameObject:
   m_ObjectHideFlags: 0
@@ -1582,6 +1610,7 @@ GameObject:
   - component: {fileID: 1762838185}
   - component: {fileID: 1762838184}
   - component: {fileID: 1762838186}
+  - component: {fileID: 1762838187}
   m_Layer: 5
   m_Name: FieldPlayer
   m_TagString: Untagged
@@ -1672,6 +1701,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1762838187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762838182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cfde1bcabcd94549ae8dc58b53e44f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2140349685
 GameObject:
   m_ObjectHideFlags: 0

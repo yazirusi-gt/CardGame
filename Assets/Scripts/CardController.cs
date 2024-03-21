@@ -6,13 +6,15 @@ using UnityEngine;
 public class CardController : MonoBehaviour
 {
     //Œ©‚©‚¯‚ÉŠÖ‚·‚é‚±‚Æ‚ğ‘€ì
+    public CardModel model;
     //ƒf[ƒ^‚ÉŠÖ‚·‚é‚±‚Æ‚ğ‘€ì
-    CardModel model;
     CardView cardView;
-
+    //ˆÚ“®‚ÉŠÖ‚·‚é‚±‚Æ‚ğ‘€ì
+    public CardMovement movement;
     public void Awake()
     {
         cardView = GetComponent<CardView>();
+        movement = GetComponent<CardMovement>();
     }
 
     public void Init(int cardID)
