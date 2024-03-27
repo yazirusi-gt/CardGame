@@ -12,6 +12,9 @@ public class CardModel
     public int at;
     public int cost;
     public Sprite icon;
+    public bool isAlive;
+    public bool canAttack;
+    public bool isFieldCard;
 
     public CardModel(int cardID)
     {
@@ -22,6 +25,7 @@ public class CardModel
         at = card.at;
         cost = card.cost;
         icon = card.icon;
+        isAlive = true;
     }
 
     void Damage(int dmg)
@@ -30,6 +34,7 @@ public class CardModel
         if (hp <= 0)
         {
             hp = 0;
+            isAlive=false;
         }
     }
 

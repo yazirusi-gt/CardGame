@@ -22,4 +22,27 @@ public class CardController : MonoBehaviour
         model = new CardModel(cardID);
         cardView.Show(model);
     }
+
+    public void Attack(CardController enemyCard)
+    {
+        model.Attack(enemyCard);
+        SetCandAttack(false);
+    }
+    public void SetCandAttack(bool canAttack)
+    {
+        cardView.SetActiveSelectablePanel(canAttack);
+        model.canAttack = canAttack;
+    }
+
+    public void CheckAlive()
+    {
+        if (model.isAlive)
+        {
+            cardView.Refresh(model);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
