@@ -249,6 +249,8 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(attacker.movement.MoveToTarget(playerHero.transform));
                 yield return new WaitForSeconds(0.25f);
                 AttackToHero(attacker, false);
+                yield return new WaitForSeconds(0.25f);
+                CheckHeroHP();
             }
 
             fieldCardList = FieldEnemyTransform.GetComponentsInChildren<CardController>();
@@ -289,7 +291,7 @@ public class GameManager : MonoBehaviour
         }
         attacker.SetCandAttack(false);
         ShowHeroHP();
-        CheckHeroHP();
+
     }
 
     private void PlayerTurn()
@@ -334,22 +336,37 @@ public class GameManager : MonoBehaviour
     {
         if (playerHeroHp <= 0 || enemyHeroHp <= 0)
         {
+            ShowResultPanel(playerHeroHp);
             resultPanel.SetActive(true);
-            if (playerHeroHp <= 0)
-            {
-                resultText.text = "LOSE";
-            }
-            else
-            {
-                resultText.text = "WIN";
+        }
+    }
+    void ShowResultPanel(int heroHp)
+    {
+        StopAllCoroutines();
+        resultPanel.SetActive(true);
+        if (playerHeroHp <= 0)
+        {
+            resultText.text = "LOSE";
+        }
+        else
+        {
+            resultText.text = "WIN";
 
-            }
         }
     }
 
     private void CardDraw(int cardID, Transform hand)
     {
         CardController card = Instantiate(CardPrefab, hand, false);
-        card.Init(cardID);
+        if (hand.name == "PlayerHand")
+        {
+            card.Init(cardID, true);
+        }
+        else
+        {
+            card.Init(cardID, false);
+
+        }
+
     }
 }

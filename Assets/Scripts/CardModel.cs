@@ -15,17 +15,19 @@ public class CardModel
     public bool isAlive;
     public bool canAttack;
     public bool isFieldCard;
+    public bool isPlayerCard;
 
-    public CardModel(int cardID)
+    public CardModel(int cardID, bool isPlayerCard)
     {
         //ScriptableObjectƒf[ƒ^‚ğæ‚è‚İ
-        CardEntity card = Resources.Load<CardEntity>("CardEntityList/Card"+cardID);
+        CardEntity card = Resources.Load<CardEntity>("CardEntityList/Card" + cardID);
         name = card.name;
         hp = card.hp;
         at = card.at;
         cost = card.cost;
         icon = card.icon;
         isAlive = true;
+        this.isPlayerCard = isPlayerCard;
     }
 
     void Damage(int dmg)

@@ -75,18 +75,20 @@ public class CardMovement : MonoBehaviour, IDragHandler, IBeginDragHandler, IEnd
     public IEnumerator MoveToTarget(Transform target)
     {
         Vector3 currentPosition = transform.position;
+        int getSiblingIndex = transform.GetSiblingIndex();
 
         //一度親をCanvsに変更する
         transform.SetParent(defaultParent.parent);
         //DOTween１でカードをTargetに移動
         Tweener moveTween = transform.DOMove(target.position, 0.25f);
-        yield return moveTween.WaitForCompletion();
+        yield return new WaitForSeconds(0.25f);
 
         //元の位置に戻る
-        Tweener returnTween = transform.DOMove(currentPosition, 0.25f);
+        transform.DOMove(currentPosition, 0.25f);
+        yield return new WaitForSeconds(0.25f);
         Debug.Log(currentPosition);
-        yield return returnTween.WaitForCompletion();
         transform.SetParent(defaultParent);
+        transform.SetSiblingIndex(getSiblingIndex);
         //Debug.Log(defaultParent.parent);
 
 
