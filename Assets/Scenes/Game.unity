@@ -685,6 +685,7 @@ MonoBehaviour:
   HandEnemyTransform: {fileID: 1162663865}
   FieldEnemyTransform: {fileID: 385010781}
   CardPrefab: {fileID: 335924985888106894, guid: 6b2bd67efffcf564ea8b0e18ea8a50a8, type: 3}
+  isPlayerTurn: 0
   playerHero: {fileID: 1392316327}
   playerHeroHpText: {fileID: 354789353}
   enemyHeroHpText: {fileID: 1228572589}
@@ -1513,7 +1514,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 341445072}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ChangeTurn
+        m_MethodName: OnClickTurnEndButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

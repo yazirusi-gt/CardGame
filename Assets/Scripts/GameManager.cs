@@ -19,9 +19,9 @@ public class GameManager : MonoBehaviour
     //カードの生成使用する
     [SerializeField] CardController CardPrefab;
 
-    bool isPlayerTurn;
+    public bool isPlayerTurn;
 
-    List<int> playerDeck = new List<int>() { 1,1,2,2},
+    List<int> playerDeck = new List<int>() { 1,3,2,2},
                 enemyDeck = new List<int>() { 3, 1, 2, 2 };
 
     [SerializeField] Transform playerHero;
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
     private void StartGame()
     {
         resultPanel.SetActive(false);
-        playerHeroHp = 30;
+        playerHeroHp = 10;
         enemyHeroHp = 10;
         ShowHeroHP();
 
@@ -84,7 +84,13 @@ public class GameManager : MonoBehaviour
         TurnCalc();
 
     }
-
+    public void OnClickTurnEndButton()
+    {
+        if (isPlayerTurn)
+        {
+            ChangeTurn();
+        }
+    }
     void ShowManaCost()
     {
         playerManaCostText.text = playerManaCost.ToString();
@@ -161,7 +167,7 @@ public class GameManager : MonoBehaviour
             timeCount--;
             timeCountText.text = timeCount.ToString();
         }
-        ChangeTurn();
+        OnClickTurnEndButton();
     }
     public void ChangeTurn()
     {
@@ -358,7 +364,7 @@ public class GameManager : MonoBehaviour
     private void CardDraw(int cardID, Transform hand)
     {
         CardController card = Instantiate(CardPrefab, hand, false);
-        if (hand.name == "PlayerHand")
+        if (hand.name == "HandPlayer")
         {
             card.Init(cardID, true);
         }
