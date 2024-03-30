@@ -267,6 +267,12 @@ public class GameManager : MonoBehaviour
         ChangeTurn();
     }
 
+    public CardController[] GetEnemyFieldCards()
+    {
+        
+        return FieldEnemyTransform.GetComponentsInChildren<CardController>();
+    }
+
     public void CardsBattle(CardController attacker, CardController defender)
     {
         Debug.Log("CardsBattle");

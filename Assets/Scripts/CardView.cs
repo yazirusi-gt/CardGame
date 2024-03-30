@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CardView : MonoBehaviour
 {
     [SerializeField] GameObject selectablePanel;
+    [SerializeField] GameObject shieldPanel;
     [SerializeField] Text Textname;
     [SerializeField] Text Texthp;
     [SerializeField] Text Textat;
@@ -19,6 +20,14 @@ public class CardView : MonoBehaviour
         this.Textat.text = cardModel.at.ToString();
         this.Textcost.text = cardModel.cost.ToString();
         this.Imageicon.sprite = cardModel.icon;
+        if(cardModel.ability == CardEntity.ABILITY.SHIELD )
+        {
+            shieldPanel.SetActive(true);
+        }
+        else
+        {
+            shieldPanel.SetActive(false);
+        }
     }
 
     public void Refresh(CardModel cardModel)
