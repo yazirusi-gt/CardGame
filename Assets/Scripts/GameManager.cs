@@ -2,15 +2,13 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] AI enemyAI;
-    [SerializeField] GameObject resultPanel;
-    [SerializeField] Text resultText;
-
+    [SerializeField] UIManeger uiManager;
 
     //手札の情報
     public Transform HandPlayerTransform,
@@ -27,14 +25,8 @@ public class GameManager : MonoBehaviour
 
     public Transform playerHero;
 
-    [SerializeField] Text playerHeroHpText;
-    [SerializeField] Text enemyHeroHpText;
-
     int playerHeroHp;
     int enemyHeroHp;
-
-    [SerializeField] Text playerManaCostText;
-    [SerializeField] Text enemyManaCostText;
 
     public int playerManaCost;
     public int enemyManaCost;
@@ -43,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     //時間管理
     public int TIME = 5;
-    [SerializeField] Text timeCountText;
+
     int timeCount;
 
     //シングルトン化
@@ -64,14 +56,14 @@ public class GameManager : MonoBehaviour
 
     private void StartGame()
     {
-        resultPanel.SetActive(false);
+        uiManager.HideResutPanel();
         playerHeroHp = 10;
         enemyHeroHp = 10;
-        ShowHeroHP();
+        uiManager.ShowHeroHP(playerHeroHp, enemyHeroHp);
 
         playerManaCost = 1;
         enemyManaCost = 1;
-        ShowManaCost();
+        uiManager.ShowManaCost(playerManaCost, enemyManaCost);
 
         playerDefaultManaCost = 1;
         enemyDefaultManaCost = 10;
@@ -79,7 +71,7 @@ public class GameManager : MonoBehaviour
         SettingInitHand();
 
         timeCount = TIME;
-        timeCountText.text = timeCount.ToString();
+        uiManager.UpdateTime(timeCount);
 
         isPlayerTurn = true;
         TurnCalc();
@@ -92,11 +84,7 @@ public class GameManager : MonoBehaviour
             ChangeTurn();
         }
     }
-    void ShowManaCost()
-    {
-        playerManaCostText.text = playerManaCost.ToString();
-        enemyManaCostText.text = enemyManaCost.ToString();
-    }
+
 
     /// <summary>
     /// 第二引数 true:プレイヤー false:エネミー
@@ -113,7 +101,7 @@ public class GameManager : MonoBehaviour
         {
             enemyManaCost -= cost;
         }
-        ShowManaCost();
+        uiManager.ShowManaCost(playerManaCost, enemyManaCost);
     }
 
     public void Restart()
@@ -161,12 +149,12 @@ public class GameManager : MonoBehaviour
     IEnumerator CountDown()
     {
         timeCount = TIME;
-        timeCountText.text = timeCount.ToString();
+        uiManager.UpdateTime(timeCount);
         while (timeCount > 0)
         {
             yield return new WaitForSeconds(1); //一秒待機
             timeCount--;
-            timeCountText.text = timeCount.ToString();
+            uiManager.UpdateTime(timeCount);
         }
         OnClickTurnEndButton();
     }
@@ -190,7 +178,7 @@ public class GameManager : MonoBehaviour
             enemyManaCost = enemyDefaultManaCost;
             GiveCardToHand(enemyDeck, HandEnemyTransform);
         }
-        ShowManaCost();
+        uiManager.ShowManaCost(playerManaCost, enemyManaCost);
         TurnCalc();
     }
 
@@ -213,12 +201,6 @@ public class GameManager : MonoBehaviour
         defender.CheckAlive();
     }
 
-    void ShowHeroHP()
-    {
-        playerHeroHpText.text = playerHeroHp.ToString();
-        enemyHeroHpText.text = enemyHeroHp.ToString();
-    }
-
     public void AttackToHero(CardController attacker, bool isPlayerCard)
     {
         if (isPlayerCard)
@@ -230,7 +212,7 @@ public class GameManager : MonoBehaviour
            playerHeroHp -= attacker.model.hp;
         }
         attacker.SetCandAttack(false);
-        ShowHeroHP();
+        uiManager.ShowHeroHP(playerHeroHp, enemyHeroHp);
 
     }
 
@@ -277,22 +259,13 @@ public class GameManager : MonoBehaviour
         if (playerHeroHp <= 0 || enemyHeroHp <= 0)
         {
             ShowResultPanel(playerHeroHp);
-            resultPanel.SetActive(true);
+            //resultPanel.SetActive(true);//不要なコード？
         }
     }
     void ShowResultPanel(int heroHp)
     {
         StopAllCoroutines();
-        resultPanel.SetActive(true);
-        if (playerHeroHp <= 0)
-        {
-            resultText.text = "LOSE";
-        }
-        else
-        {
-            resultText.text = "WIN";
-
-        }
+        uiManager.ShowResultPanel(heroHp);
     }
 
     private void CardDraw(int cardID, Transform hand)

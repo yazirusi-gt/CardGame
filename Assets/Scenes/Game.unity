@@ -692,8 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAI: {fileID: 217274688}
-  resultPanel: {fileID: 317265814}
-  resultText: {fileID: 1856133918}
+  uiManager: {fileID: 603462646}
   HandPlayerTransform: {fileID: 1627941890}
   FieldPlayerTransform: {fileID: 1762838183}
   HandEnemyTransform: {fileID: 1162663865}
@@ -701,14 +700,9 @@ MonoBehaviour:
   CardPrefab: {fileID: 335924985888106894, guid: 6b2bd67efffcf564ea8b0e18ea8a50a8, type: 3}
   isPlayerTurn: 0
   playerHero: {fileID: 1392316327}
-  playerHeroHpText: {fileID: 354789353}
-  enemyHeroHpText: {fileID: 1228572589}
-  playerManaCostText: {fileID: 211286296}
-  enemyManaCostText: {fileID: 916282903}
   playerManaCost: 0
   enemyManaCost: 0
   TIME: 5
-  timeCountText: {fileID: 1189664539}
 --- !u!4 &341445073
 Transform:
   m_ObjectHideFlags: 0
@@ -1009,6 +1003,7 @@ GameObject:
   - component: {fileID: 603462644}
   - component: {fileID: 603462643}
   - component: {fileID: 603462642}
+  - component: {fileID: 603462646}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1109,6 +1104,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &603462646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603462641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18bc2a088005be49989c9a294afa2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resultPanel: {fileID: 317265814}
+  resultText: {fileID: 1856133918}
+  playerHeroHpText: {fileID: 354789353}
+  enemyHeroHpText: {fileID: 1228572589}
+  playerManaCostText: {fileID: 211286296}
+  enemyManaCostText: {fileID: 916282903}
+  timeCountText: {fileID: 1189664539}
 --- !u!1 &762586266
 GameObject:
   m_ObjectHideFlags: 0
