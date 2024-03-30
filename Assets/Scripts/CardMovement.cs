@@ -20,7 +20,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IBeginDragHandler, IEnd
     {
         //カードのコストとPlayerのManaコストを比較
         CardController card = GetComponent<CardController>();
-        if (card.model.isPlayerCard && GameManager.instance.isPlayerTurn && !card.model.isFieldCard && card.model.cost <= GameManager.instance.playerManaCost)
+        if (card.model.isPlayerCard && GameManager.instance.isPlayerTurn && !card.model.isFieldCard && card.model.cost <= GameManager.instance.gamePlayer.manaCost)
         {
             isDraggable = true;
         }

@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 217274685}
   - component: {fileID: 217274687}
   - component: {fileID: 217274688}
+  - component: {fileID: 217274689}
   m_Layer: 5
   m_Name: HerroEnemy
   m_TagString: Untagged
@@ -373,6 +374,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e4acf74e19e5a3438a4b093b6799019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &217274689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217274683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e8b118860c1c4e49a2bdc0c5978414a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Deck: 
+  heroHp: 0
+  manaCost: 0
+  defaultManaCost: 0
 --- !u!1 &217913314
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +710,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyAI: {fileID: 217274688}
   uiManager: {fileID: 603462646}
+  gamePlayer: {fileID: 1392316331}
+  gameEnemy: {fileID: 217274689}
   HandPlayerTransform: {fileID: 1627941890}
   FieldPlayerTransform: {fileID: 1762838183}
   HandEnemyTransform: {fileID: 1162663865}
@@ -700,8 +719,6 @@ MonoBehaviour:
   CardPrefab: {fileID: 335924985888106894, guid: 6b2bd67efffcf564ea8b0e18ea8a50a8, type: 3}
   isPlayerTurn: 0
   playerHero: {fileID: 1392316327}
-  playerManaCost: 0
-  enemyManaCost: 0
   TIME: 5
 --- !u!4 &341445073
 Transform:
@@ -1682,6 +1699,7 @@ GameObject:
   - component: {fileID: 1392316329}
   - component: {fileID: 1392316328}
   - component: {fileID: 1392316330}
+  - component: {fileID: 1392316331}
   m_Layer: 5
   m_Name: HerroPlayer
   m_TagString: Untagged
@@ -1760,6 +1778,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec46145b5a3b264bb0ab75279a812b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1392316331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392316326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e8b118860c1c4e49a2bdc0c5978414a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Deck: 
+  heroHp: 10
+  manaCost: 0
+  defaultManaCost: 0
 --- !u!1 &1598986359
 GameObject:
   m_ObjectHideFlags: 0

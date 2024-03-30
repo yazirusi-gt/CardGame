@@ -25,10 +25,10 @@ public class AI : MonoBehaviour
         CardController[] handCardList = gameManager.HandEnemyTransform.GetComponentsInChildren<CardController>();
 
         //コスト以下のカードがあればカードをフィールドに出し続ける
-        while (Array.Exists(handCardList, card => card.model.cost <= gameManager.enemyManaCost))
+        while (Array.Exists(handCardList, card => card.model.cost <= gameManager.gameEnemy.manaCost))
         {
             //場に出すカードを千t無く
-            CardController[] selectableHandCardList = Array.FindAll(handCardList, card => card.model.cost <= gameManager.enemyManaCost);
+            CardController[] selectableHandCardList = Array.FindAll(handCardList, card => card.model.cost <= gameManager.gameEnemy.manaCost);
             //コスト以下のカードリストを取得
             CardController enemyCard = selectableHandCardList[0];
             //カードを移動
