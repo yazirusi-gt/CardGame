@@ -214,11 +214,11 @@ public class GameManager : MonoBehaviour
             CardController enemyCard = selectableHandCardList[0];
             //カードを移動
             StartCoroutine(enemyCard.movement.MoveToField(FieldEnemyTransform));
-            //enemyCard.movement.test(FieldEnemyTransform);
 
             //enemyマナ消費
             ReduceManaCost(enemyCard.model.cost, false);
             enemyCard.model.isFieldCard = true;
+            enemyCard.OnFiled(false);
             handCardList = HandEnemyTransform.GetComponentsInChildren<CardController>();
 
             yield return new WaitForSeconds(1);
@@ -248,6 +248,7 @@ public class GameManager : MonoBehaviour
 
                 //attackerとdefenderを戦わせる
                 StartCoroutine(attacker.movement.MoveToTarget(defender.transform));
+                yield return new WaitForSeconds(0.51f);
                 CardsBattle(attacker, defender);
             }
             else
@@ -338,7 +339,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void CheckHeroHP()
+    public void CheckHeroHP()
     {
         if (playerHeroHp <= 0 || enemyHeroHp <= 0)
         {

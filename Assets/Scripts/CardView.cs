@@ -30,4 +30,5 @@ public class CardView : MonoBehaviour
     {
         selectablePanel.SetActive(flag);
     }
+
 }

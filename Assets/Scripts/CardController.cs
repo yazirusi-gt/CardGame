@@ -34,6 +34,16 @@ public class CardController : MonoBehaviour
         model.canAttack = canAttack;
     }
 
+    public void OnFiled(bool isPlayer)
+    {
+        GameManager.instance.ReduceManaCost(model.cost, isPlayer);
+        model.isFieldCard = true;
+        if(model.ability == CardEntity.ABILITY.INIT_ATTACKABLE)
+        {
+            SetCandAttack(true);
+        }
+    }
+
     public void CheckAlive()
     {
         if (model.isAlive)

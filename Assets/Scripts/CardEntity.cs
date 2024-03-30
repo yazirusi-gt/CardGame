@@ -12,5 +12,13 @@ public class CardEntity : ScriptableObject
     public int hp;
     public int at;
     public int cost;
+    public ABILITY ability;
     public Sprite icon;
+
+    public enum ABILITY
+    {
+        None,
+        INIT_ATTACKABLE,
+        SHIELD,
+    }
 }

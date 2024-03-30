@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static CardEntity;
 
 /// <summary>
 /// カードデータとその処理
@@ -11,6 +12,7 @@ public class CardModel
     public int hp;
     public int at;
     public int cost;
+    public ABILITY ability;
     public Sprite icon;
     public bool isAlive;
     public bool canAttack;
@@ -25,6 +27,7 @@ public class CardModel
         hp = card.hp;
         at = card.at;
         cost = card.cost;
+        ability = card.ability;
         icon = card.icon;
         isAlive = true;
         this.isPlayerCard = isPlayerCard;
