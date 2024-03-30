@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 217274686}
   - component: {fileID: 217274685}
   - component: {fileID: 217274687}
+  - component: {fileID: 217274688}
   m_Layer: 5
   m_Name: HerroEnemy
   m_TagString: Untagged
@@ -358,6 +359,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ec46145b5a3b264bb0ab75279a812b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &217274688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217274683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e4acf74e19e5a3438a4b093b6799019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &217913314
@@ -678,6 +691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48c1bad87787ac24e9a9bba7ec44d9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAI: {fileID: 217274688}
   resultPanel: {fileID: 317265814}
   resultText: {fileID: 1856133918}
   HandPlayerTransform: {fileID: 1627941890}
@@ -692,6 +706,7 @@ MonoBehaviour:
   playerManaCostText: {fileID: 211286296}
   enemyManaCostText: {fileID: 916282903}
   playerManaCost: 0
+  enemyManaCost: 0
   TIME: 5
   timeCountText: {fileID: 1189664539}
 --- !u!4 &341445073

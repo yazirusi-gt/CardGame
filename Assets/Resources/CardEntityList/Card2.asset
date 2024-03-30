@@ -16,4 +16,5 @@ MonoBehaviour:
   hp: 3
   at: 1
   cost: 1
+  ability: 2
   icon: {fileID: 21300000, guid: ece7d52fafc79c046a46fc9cc976c030, type: 3}

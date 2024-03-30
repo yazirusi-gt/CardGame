@@ -25,7 +25,8 @@ public class AttackedCard : MonoBehaviour, IDropHandler
         }
         //シールドカードがあればシールドカード以外は攻撃できない。
         CardController[] enemyFieldCards = GameManager.instance.GetEnemyFieldCards();
-        if (Array.Exists(enemyFieldCards, card => card.model.ability == CardEntity.ABILITY.SHIELD) && defender.model.ability != CardEntity.ABILITY.SHIELD)
+        if (Array.Exists(enemyFieldCards,
+                card => card.model.ability == CardEntity.ABILITY.SHIELD) && defender.model.ability != CardEntity.ABILITY.SHIELD)
         {
             return;
         }

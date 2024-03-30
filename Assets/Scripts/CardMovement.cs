@@ -86,11 +86,8 @@ public class CardMovement : MonoBehaviour, IDragHandler, IBeginDragHandler, IEnd
         //Œ³‚ÌˆÊ’u‚É–ß‚é
         transform.DOMove(currentPosition, 0.25f);
         yield return new WaitForSeconds(0.25f);
-        Debug.Log(currentPosition);
         transform.SetParent(defaultParent);
         transform.SetSiblingIndex(getSiblingIndex);
-        //Debug.Log(defaultParent.parent);
-
 
     }
     public void test(Transform field)
