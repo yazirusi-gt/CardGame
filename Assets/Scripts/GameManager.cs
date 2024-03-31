@@ -48,8 +48,8 @@ public class GameManager : MonoBehaviour
     private void StartGame()
     {
         uiManager.HideResutPanel();
-        gamePlayer.Init(new List<int>() {1,1,3,2,2 });
-        gameEnemy.Init(new List<int>() {1,1,3,2,2 });
+        gamePlayer.Init(new List<int>() {4,1,3,2,2 });
+        gameEnemy.Init(new List<int>() {4,1,3,2,2 });
         uiManager.ShowHeroHP(gamePlayer.heroHp, gameEnemy.heroHp);
 
         gamePlayer.manaCost = 1;

@@ -13,6 +13,7 @@ public class CardEntity : ScriptableObject
     public int at;
     public int cost;
     public ABILITY ability;
+    public SPELL spell;
     public Sprite icon;
 
     public enum ABILITY
@@ -20,5 +21,16 @@ public class CardEntity : ScriptableObject
         None,
         INIT_ATTACKABLE,
         SHIELD,
+    }
+
+    public enum SPELL
+    {
+        NONE,
+        DAMAGE_ENEMY_CARD,
+        DAMAGE_ENEMY_CARDS,
+        DAMAGE_ENEMY_HERO,
+        HEAL_FRIEND_CARD,
+        HEAL_FRIEND_CARDS,
+        HEAL_FRIEND_HERO,
     }
 }

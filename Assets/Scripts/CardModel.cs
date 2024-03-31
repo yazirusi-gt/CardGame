@@ -18,6 +18,7 @@ public class CardModel
     public bool canAttack;
     public bool isFieldCard;
     public bool isPlayerCard;
+    public SPELL spell;
 
     public CardModel(int cardID, bool isPlayerCard)
     {
@@ -28,6 +29,7 @@ public class CardModel
         at = card.at;
         cost = card.cost;
         ability = card.ability;
+        spell = card.spell;
         icon = card.icon;
         isAlive = true;
         this.isPlayerCard = isPlayerCard;

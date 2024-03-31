@@ -55,4 +55,29 @@ public class CardController : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    public void UseSpellTo(CardController target)
+    {
+        switch(model.spell)
+        {
+            case CardEntity.SPELL.DAMAGE_ENEMY_CARD:
+                //ì¡íËÇÃìGÇçUåÇÇ∑ÇÈ
+                Attack(target);
+                target.CheckAlive();
+                break;
+            case CardEntity.SPELL.DAMAGE_ENEMY_CARDS:
+                break;
+            case CardEntity.SPELL.DAMAGE_ENEMY_HERO:
+                break;
+            case CardEntity.SPELL.HEAL_FRIEND_CARD:
+                break;
+            case CardEntity.SPELL.HEAL_FRIEND_CARDS:
+                break;
+            case CardEntity.SPELL.HEAL_FRIEND_HERO:
+                break;
+            case CardEntity.SPELL.NONE:
+                return;
+        }
+        Destroy(this.gameObject);
+    }
 }
